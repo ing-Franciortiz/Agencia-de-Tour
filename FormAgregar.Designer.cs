@@ -50,9 +50,10 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(287, 813);
+            btnGuardar.Location = new Point(115, 339);
+            btnGuardar.Margin = new Padding(1, 1, 1, 1);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(225, 69);
+            btnGuardar.Size = new Size(90, 29);
             btnGuardar.TabIndex = 0;
             btnGuardar.Text = "Guardar Tour";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(688, 813);
+            btnLimpiar.Location = new Point(275, 339);
+            btnLimpiar.Margin = new Padding(1, 1, 1, 1);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(225, 69);
+            btnLimpiar.Size = new Size(90, 29);
             btnLimpiar.TabIndex = 1;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -70,9 +72,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(1070, 813);
+            btnCancelar.Location = new Point(428, 339);
+            btnCancelar.Margin = new Padding(1, 1, 1, 1);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(225, 69);
+            btnCancelar.Size = new Size(90, 29);
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -81,135 +84,150 @@
             // cmbPais
             // 
             cmbPais.FormattingEnabled = true;
-            cmbPais.Location = new Point(959, 203);
+            cmbPais.Location = new Point(384, 85);
+            cmbPais.Margin = new Padding(1, 1, 1, 1);
             cmbPais.Name = "cmbPais";
-            cmbPais.Size = new Size(459, 56);
+            cmbPais.Size = new Size(186, 28);
             cmbPais.TabIndex = 3;
             cmbPais.SelectedIndexChanged += cmbPais_SelectedIndexChanged;
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(180, 187);
+            txtPrecio.Location = new Point(72, 78);
+            txtPrecio.Margin = new Padding(1, 1, 1, 1);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(224, 55);
+            txtPrecio.Size = new Size(92, 27);
             txtPrecio.TabIndex = 6;
             // 
             // txtITBIS
             // 
-            txtITBIS.Location = new Point(180, 327);
+            txtITBIS.Location = new Point(72, 136);
+            txtITBIS.Margin = new Padding(1, 1, 1, 1);
             txtITBIS.Name = "txtITBIS";
-            txtITBIS.Size = new Size(181, 55);
+            txtITBIS.Size = new Size(75, 27);
             txtITBIS.TabIndex = 7;
             // 
             // txtNombreTour
             // 
-            txtNombreTour.Location = new Point(180, 76);
+            txtNombreTour.Location = new Point(72, 32);
+            txtNombreTour.Margin = new Padding(1, 1, 1, 1);
             txtNombreTour.Name = "txtNombreTour";
-            txtNombreTour.Size = new Size(1238, 55);
+            txtNombreTour.Size = new Size(498, 27);
             txtNombreTour.TabIndex = 10;
             // 
             // txtID
             // 
-            txtID.Location = new Point(180, 577);
+            txtID.Location = new Point(72, 240);
+            txtID.Margin = new Padding(1, 1, 1, 1);
             txtID.Name = "txtID";
-            txtID.Size = new Size(241, 55);
+            txtID.Size = new Size(99, 27);
             txtID.TabIndex = 11;
             // 
             // clbDestino
             // 
             clbDestino.FormattingEnabled = true;
-            clbDestino.Location = new Point(1439, 142);
+            clbDestino.Location = new Point(576, 59);
+            clbDestino.Margin = new Padding(1, 1, 1, 1);
             clbDestino.Name = "clbDestino";
-            clbDestino.Size = new Size(469, 166);
+            clbDestino.Size = new Size(190, 70);
             clbDestino.TabIndex = 12;
             // 
             // lbl
             // 
             lbl.AutoSize = true;
-            lbl.Location = new Point(180, 25);
+            lbl.Location = new Point(72, 10);
+            lbl.Margin = new Padding(1, 0, 1, 0);
             lbl.Name = "lbl";
-            lbl.Size = new Size(281, 48);
+            lbl.Size = new Size(118, 20);
             lbl.TabIndex = 13;
             lbl.Text = "Nombre de Tour";
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(180, 134);
+            lblPrecio.Location = new Point(72, 56);
+            lblPrecio.Margin = new Padding(1, 0, 1, 0);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(119, 48);
+            lblPrecio.Size = new Size(50, 20);
             lblPrecio.TabIndex = 14;
             lblPrecio.Text = "Precio";
             // 
             // lBLITBIS
             // 
             lBLITBIS.AutoSize = true;
-            lBLITBIS.Location = new Point(180, 266);
+            lBLITBIS.Location = new Point(72, 111);
+            lBLITBIS.Margin = new Padding(1, 0, 1, 0);
             lBLITBIS.Name = "lBLITBIS";
-            lBLITBIS.Size = new Size(99, 48);
+            lBLITBIS.Size = new Size(42, 20);
             lBLITBIS.TabIndex = 15;
             lBLITBIS.Text = "ITBIS";
             // 
             // lBLDuraccion
             // 
             lBLDuraccion.AutoSize = true;
-            lBLDuraccion.Location = new Point(180, 408);
+            lBLDuraccion.Location = new Point(72, 170);
+            lBLDuraccion.Margin = new Padding(1, 0, 1, 0);
             lBLDuraccion.Name = "lBLDuraccion";
-            lBLDuraccion.Size = new Size(163, 48);
+            lBLDuraccion.Size = new Size(69, 20);
             lBLDuraccion.TabIndex = 16;
             lBLDuraccion.Text = "Duracion";
             // 
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(180, 526);
+            lblID.Location = new Point(72, 219);
+            lblID.Margin = new Padding(1, 0, 1, 0);
             lblID.Name = "lblID";
-            lblID.Size = new Size(55, 48);
+            lblID.Size = new Size(24, 20);
             lblID.TabIndex = 17;
             lblID.Text = "ID";
             // 
             // lblPais
             // 
             lblPais.AutoSize = true;
-            lblPais.Location = new Point(959, 152);
+            lblPais.Location = new Point(384, 63);
+            lblPais.Margin = new Padding(1, 0, 1, 0);
             lblPais.Name = "lblPais";
-            lblPais.Size = new Size(81, 48);
+            lblPais.Size = new Size(34, 20);
             lblPais.TabIndex = 19;
             lblPais.Text = "Pais";
             // 
             // lblDestino
             // 
             lblDestino.AutoSize = true;
-            lblDestino.Location = new Point(1439, 79);
+            lblDestino.Location = new Point(576, 33);
+            lblDestino.Margin = new Padding(1, 0, 1, 0);
             lblDestino.Name = "lblDestino";
-            lblDestino.Size = new Size(156, 48);
+            lblDestino.Size = new Size(66, 20);
             lblDestino.TabIndex = 20;
             lblDestino.Text = "Destinos";
             // 
             // cmbDuracion
             // 
             cmbDuracion.FormattingEnabled = true;
-            cmbDuracion.Location = new Point(184, 467);
+            cmbDuracion.Location = new Point(74, 195);
+            cmbDuracion.Margin = new Padding(1, 1, 1, 1);
             cmbDuracion.Name = "cmbDuracion";
-            cmbDuracion.Size = new Size(363, 56);
+            cmbDuracion.Size = new Size(148, 28);
             cmbDuracion.TabIndex = 22;
             cmbDuracion.SelectedIndexChanged += cmbDuracion_SelectedIndexChanged;
             // 
             // lblEstado
             // 
             lblEstado.AutoSize = true;
-            lblEstado.Location = new Point(180, 680);
+            lblEstado.Location = new Point(72, 283);
+            lblEstado.Margin = new Padding(1, 0, 1, 0);
             lblEstado.Name = "lblEstado";
-            lblEstado.Size = new Size(125, 48);
+            lblEstado.Size = new Size(54, 20);
             lblEstado.TabIndex = 23;
             lblEstado.Text = "Estado";
             // 
             // FormAgregar
             // 
-            AutoScaleDimensions = new SizeF(20F, 48F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Highlight;
-            ClientSize = new Size(2131, 976);
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(804, 407);
             Controls.Add(lblEstado);
             Controls.Add(cmbDuracion);
             Controls.Add(lblDestino);
@@ -228,6 +246,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnGuardar);
+            Margin = new Padding(1, 1, 1, 1);
             Name = "FormAgregar";
             Text = "FormAgregar";
             Load += FormAgregar_Load;

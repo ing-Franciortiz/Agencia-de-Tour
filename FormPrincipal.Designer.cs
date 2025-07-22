@@ -30,11 +30,11 @@
         {
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            agregarTourToolStripMenuItem = new ToolStripMenuItem();
             agregarToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             exportarToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
-            agregarTourToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +45,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, agregarToolStripMenuItem, consultarToolStripMenuItem, exportarToolStripMenuItem, salirToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(2652, 61);
+            menuStrip1.Padding = new Padding(2, 1, 0, 1);
+            menuStrip1.Size = new Size(770, 26);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -53,50 +54,51 @@
             // 
             inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarTourToolStripMenuItem });
             inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            inicioToolStripMenuItem.Size = new Size(134, 57);
+            inicioToolStripMenuItem.Size = new Size(59, 24);
             inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // agregarTourToolStripMenuItem
+            // 
+            agregarTourToolStripMenuItem.Name = "agregarTourToolStripMenuItem";
+            agregarTourToolStripMenuItem.Size = new Size(179, 26);
+            agregarTourToolStripMenuItem.Text = "Agregar Tour";
+            agregarTourToolStripMenuItem.Click += agregarTourToolStripMenuItem_Click;
             // 
             // agregarToolStripMenuItem
             // 
             agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            agregarToolStripMenuItem.Size = new Size(255, 57);
+            agregarToolStripMenuItem.Size = new Size(110, 24);
             agregarToolStripMenuItem.Text = "Agregar Tour";
             // 
             // consultarToolStripMenuItem
             // 
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(198, 57);
+            consultarToolStripMenuItem.Size = new Size(85, 24);
             consultarToolStripMenuItem.Text = "Consultar";
             // 
             // exportarToolStripMenuItem
             // 
             exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            exportarToolStripMenuItem.Size = new Size(181, 57);
+            exportarToolStripMenuItem.Size = new Size(79, 24);
             exportarToolStripMenuItem.Text = "Exportar";
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(116, 57);
+            salirToolStripMenuItem.Size = new Size(52, 24);
             salirToolStripMenuItem.Text = "Salir";
-            // 
-            // agregarTourToolStripMenuItem
-            // 
-            agregarTourToolStripMenuItem.Name = "agregarTourToolStripMenuItem";
-            agregarTourToolStripMenuItem.Size = new Size(538, 66);
-            agregarTourToolStripMenuItem.Text = "Agregar Tour";
-            agregarTourToolStripMenuItem.Click += agregarTourToolStripMenuItem_Click;
             // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(20F, 48F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Highlight;
-            ClientSize = new Size(2652, 1330);
+            ClientSize = new Size(770, 440);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.Desktop;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(1, 1, 1, 1);
             Name = "FormPrincipal";
             Text = "Agencia de Tour";
             menuStrip1.ResumeLayout(false);
