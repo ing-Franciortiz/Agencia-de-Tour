@@ -51,7 +51,7 @@
             // btnGuardar
             // 
             btnGuardar.Location = new Point(115, 339);
-            btnGuardar.Margin = new Padding(1, 1, 1, 1);
+            btnGuardar.Margin = new Padding(1);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(90, 29);
             btnGuardar.TabIndex = 0;
@@ -62,7 +62,7 @@
             // btnLimpiar
             // 
             btnLimpiar.Location = new Point(275, 339);
-            btnLimpiar.Margin = new Padding(1, 1, 1, 1);
+            btnLimpiar.Margin = new Padding(1);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(90, 29);
             btnLimpiar.TabIndex = 1;
@@ -73,7 +73,7 @@
             // btnCancelar
             // 
             btnCancelar.Location = new Point(428, 339);
-            btnCancelar.Margin = new Padding(1, 1, 1, 1);
+            btnCancelar.Margin = new Padding(1);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(90, 29);
             btnCancelar.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             cmbPais.FormattingEnabled = true;
             cmbPais.Location = new Point(384, 85);
-            cmbPais.Margin = new Padding(1, 1, 1, 1);
+            cmbPais.Margin = new Padding(1);
             cmbPais.Name = "cmbPais";
             cmbPais.Size = new Size(186, 28);
             cmbPais.TabIndex = 3;
@@ -94,7 +94,7 @@
             // txtPrecio
             // 
             txtPrecio.Location = new Point(72, 78);
-            txtPrecio.Margin = new Padding(1, 1, 1, 1);
+            txtPrecio.Margin = new Padding(1);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(92, 27);
             txtPrecio.TabIndex = 6;
@@ -102,7 +102,7 @@
             // txtITBIS
             // 
             txtITBIS.Location = new Point(72, 136);
-            txtITBIS.Margin = new Padding(1, 1, 1, 1);
+            txtITBIS.Margin = new Padding(1);
             txtITBIS.Name = "txtITBIS";
             txtITBIS.Size = new Size(75, 27);
             txtITBIS.TabIndex = 7;
@@ -110,7 +110,7 @@
             // txtNombreTour
             // 
             txtNombreTour.Location = new Point(72, 32);
-            txtNombreTour.Margin = new Padding(1, 1, 1, 1);
+            txtNombreTour.Margin = new Padding(1);
             txtNombreTour.Name = "txtNombreTour";
             txtNombreTour.Size = new Size(498, 27);
             txtNombreTour.TabIndex = 10;
@@ -118,7 +118,7 @@
             // txtID
             // 
             txtID.Location = new Point(72, 240);
-            txtID.Margin = new Padding(1, 1, 1, 1);
+            txtID.Margin = new Padding(1);
             txtID.Name = "txtID";
             txtID.Size = new Size(99, 27);
             txtID.TabIndex = 11;
@@ -127,7 +127,7 @@
             // 
             clbDestino.FormattingEnabled = true;
             clbDestino.Location = new Point(576, 59);
-            clbDestino.Margin = new Padding(1, 1, 1, 1);
+            clbDestino.Margin = new Padding(1);
             clbDestino.Name = "clbDestino";
             clbDestino.Size = new Size(190, 70);
             clbDestino.TabIndex = 12;
@@ -206,7 +206,7 @@
             // 
             cmbDuracion.FormattingEnabled = true;
             cmbDuracion.Location = new Point(74, 195);
-            cmbDuracion.Margin = new Padding(1, 1, 1, 1);
+            cmbDuracion.Margin = new Padding(1);
             cmbDuracion.Name = "cmbDuracion";
             cmbDuracion.Size = new Size(148, 28);
             cmbDuracion.TabIndex = 22;
@@ -227,7 +227,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(804, 407);
+            ClientSize = new Size(825, 419);
             Controls.Add(lblEstado);
             Controls.Add(cmbDuracion);
             Controls.Add(lblDestino);
@@ -246,7 +246,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnGuardar);
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(1);
             Name = "FormAgregar";
             Text = "FormAgregar";
             Load += FormAgregar_Load;

@@ -30,7 +30,6 @@
         {
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
-            agregarTourToolStripMenuItem = new ToolStripMenuItem();
             agregarToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             exportarToolStripMenuItem = new ToolStripMenuItem();
@@ -52,23 +51,16 @@
             // 
             // inicioToolStripMenuItem
             // 
-            inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarTourToolStripMenuItem });
             inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             inicioToolStripMenuItem.Size = new Size(59, 24);
             inicioToolStripMenuItem.Text = "Inicio";
-            // 
-            // agregarTourToolStripMenuItem
-            // 
-            agregarTourToolStripMenuItem.Name = "agregarTourToolStripMenuItem";
-            agregarTourToolStripMenuItem.Size = new Size(179, 26);
-            agregarTourToolStripMenuItem.Text = "Agregar Tour";
-            agregarTourToolStripMenuItem.Click += agregarTourToolStripMenuItem_Click;
             // 
             // agregarToolStripMenuItem
             // 
             agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
             agregarToolStripMenuItem.Size = new Size(110, 24);
             agregarToolStripMenuItem.Text = "Agregar Tour";
+            agregarToolStripMenuItem.Click += agregarToolStripMenuItem_Click;
             // 
             // consultarToolStripMenuItem
             // 
@@ -81,6 +73,7 @@
             exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
             exportarToolStripMenuItem.Size = new Size(79, 24);
             exportarToolStripMenuItem.Text = "Exportar";
+            exportarToolStripMenuItem.Click += exportarToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
@@ -98,7 +91,7 @@
             ForeColor = SystemColors.Desktop;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(1);
             Name = "FormPrincipal";
             Text = "Agencia de Tour";
             menuStrip1.ResumeLayout(false);
@@ -115,6 +108,5 @@
         private ToolStripMenuItem consultarToolStripMenuItem;
         private ToolStripMenuItem exportarToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
-        private ToolStripMenuItem agregarTourToolStripMenuItem;
     }
 }
