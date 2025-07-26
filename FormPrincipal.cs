@@ -30,6 +30,15 @@
             formEliminar.ShowDialog();
         }
 
-      
+        private void actualizarToursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Crea una instancia del formulario de actualización, pasándole la lista de tours.
+            FormActualizarTour formActualizar = new FormActualizarTour(_listaTours);
+            // Muestra el formulario como un diálogo modal.
+            // Esto significa que el usuario debe cerrar este formulario antes de interactuar con el principal.
+            formActualizar.ShowDialog();
+        }
+
+       
     }
 }

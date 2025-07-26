@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
+            mostrarToToolStripMenuItem = new ToolStripMenuItem();
             agregarToolStripMenuItem = new ToolStripMenuItem();
-            consultarToolStripMenuItem = new ToolStripMenuItem();
+            actualizarToursToolStripMenuItem = new ToolStripMenuItem();
+            eliminarTourToolStripMenuItem = new ToolStripMenuItem();
             exportarToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
-            eliminarTourToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,13 +42,19 @@
             // 
             menuStrip1.BackColor = Color.Honeydew;
             menuStrip1.ImageScalingSize = new Size(48, 48);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { agregarToolStripMenuItem, consultarToolStripMenuItem, exportarToolStripMenuItem, salirToolStripMenuItem, eliminarTourToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mostrarToToolStripMenuItem, agregarToolStripMenuItem, actualizarToursToolStripMenuItem, eliminarTourToolStripMenuItem, exportarToolStripMenuItem, salirToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(2, 1, 0, 1);
             menuStrip1.Size = new Size(893, 26);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // mostrarToToolStripMenuItem
+            // 
+            mostrarToToolStripMenuItem.Name = "mostrarToToolStripMenuItem";
+            mostrarToToolStripMenuItem.Size = new Size(111, 24);
+            mostrarToToolStripMenuItem.Text = "Mostrar tours";
             // 
             // agregarToolStripMenuItem
             // 
@@ -56,23 +63,12 @@
             agregarToolStripMenuItem.Text = "Agregar Tour";
             agregarToolStripMenuItem.Click += agregarToolStripMenuItem_Click;
             // 
-            // consultarToolStripMenuItem
+            // actualizarToursToolStripMenuItem
             // 
-            consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(85, 24);
-            consultarToolStripMenuItem.Text = "Consultar";
-            // 
-            // exportarToolStripMenuItem
-            // 
-            exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            exportarToolStripMenuItem.Size = new Size(79, 24);
-            exportarToolStripMenuItem.Text = "Exportar";
-            // 
-            // salirToolStripMenuItem
-            // 
-            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(52, 24);
-            salirToolStripMenuItem.Text = "Salir";
+            actualizarToursToolStripMenuItem.Name = "actualizarToursToolStripMenuItem";
+            actualizarToursToolStripMenuItem.Size = new Size(128, 24);
+            actualizarToursToolStripMenuItem.Text = "Actualizar Tours";
+            actualizarToursToolStripMenuItem.Click += actualizarToursToolStripMenuItem_Click;
             // 
             // eliminarTourToolStripMenuItem
             // 
@@ -80,6 +76,18 @@
             eliminarTourToolStripMenuItem.Size = new Size(110, 24);
             eliminarTourToolStripMenuItem.Text = "Eliminar Tour";
             eliminarTourToolStripMenuItem.Click += eliminarTourToolStripMenuItem_Click;
+            // 
+            // exportarToolStripMenuItem
+            // 
+            exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            exportarToolStripMenuItem.Size = new Size(116, 24);
+            exportarToolStripMenuItem.Text = "Exportar tours";
+            // 
+            // salirToolStripMenuItem
+            // 
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(52, 24);
+            salirToolStripMenuItem.Text = "Salir";
             // 
             // FormPrincipal
             // 
@@ -104,9 +112,10 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem agregarToolStripMenuItem;
-        private ToolStripMenuItem consultarToolStripMenuItem;
         private ToolStripMenuItem exportarToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem eliminarTourToolStripMenuItem;
+        private ToolStripMenuItem mostrarToToolStripMenuItem;
+        private ToolStripMenuItem actualizarToursToolStripMenuItem;
     }
 }
