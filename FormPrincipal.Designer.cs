@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            inicioToolStripMenuItem = new ToolStripMenuItem();
             agregarToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             exportarToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
+            eliminarTourToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,19 +41,13 @@
             // 
             menuStrip1.BackColor = Color.Honeydew;
             menuStrip1.ImageScalingSize = new Size(48, 48);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, agregarToolStripMenuItem, consultarToolStripMenuItem, exportarToolStripMenuItem, salirToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { agregarToolStripMenuItem, consultarToolStripMenuItem, exportarToolStripMenuItem, salirToolStripMenuItem, eliminarTourToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(2, 1, 0, 1);
-            menuStrip1.Size = new Size(770, 26);
+            menuStrip1.Size = new Size(893, 26);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            // 
-            // inicioToolStripMenuItem
-            // 
-            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            inicioToolStripMenuItem.Size = new Size(59, 24);
-            inicioToolStripMenuItem.Text = "Inicio";
             // 
             // agregarToolStripMenuItem
             // 
@@ -73,7 +67,6 @@
             exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
             exportarToolStripMenuItem.Size = new Size(79, 24);
             exportarToolStripMenuItem.Text = "Exportar";
-            exportarToolStripMenuItem.Click += exportarToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
@@ -81,12 +74,19 @@
             salirToolStripMenuItem.Size = new Size(52, 24);
             salirToolStripMenuItem.Text = "Salir";
             // 
+            // eliminarTourToolStripMenuItem
+            // 
+            eliminarTourToolStripMenuItem.Name = "eliminarTourToolStripMenuItem";
+            eliminarTourToolStripMenuItem.Size = new Size(110, 24);
+            eliminarTourToolStripMenuItem.Text = "Eliminar Tour";
+            eliminarTourToolStripMenuItem.Click += eliminarTourToolStripMenuItem_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Highlight;
-            ClientSize = new Size(770, 440);
+            ClientSize = new Size(893, 475);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.Desktop;
             IsMdiContainer = true;
@@ -103,10 +103,10 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem inicioToolStripMenuItem;
         private ToolStripMenuItem agregarToolStripMenuItem;
         private ToolStripMenuItem consultarToolStripMenuItem;
         private ToolStripMenuItem exportarToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem eliminarTourToolStripMenuItem;
     }
 }
