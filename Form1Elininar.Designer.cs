@@ -35,7 +35,7 @@
             // 
             // txtIdEliminar
             // 
-            txtIdEliminar.Location = new Point(121, 12);
+            txtIdEliminar.Location = new Point(133, 12);
             txtIdEliminar.Name = "txtIdEliminar";
             txtIdEliminar.Size = new Size(125, 27);
             txtIdEliminar.TabIndex = 0;
