@@ -13,53 +13,83 @@ namespace Agencia_de_tour
     public partial class Form1Elininar : Form
 
     {
-        private List<Tour> _listaTours;
 
-        public Form1Elininar(List<Tour> listaTours)
+
+        public Form1Elininar()
         {
             InitializeComponent();
-            _listaTours = listaTours;
+
         }
-
-        private void btnEliminarTour_Click(object sender, EventArgs e)
+        private void LimpiarCamposUsuario(Control parent)
         {
-            try
+            foreach (Control ctrl in parent.Controls)
             {
-                string idEliminar = txtIdEliminar.Text.Trim();
-                if (string.IsNullOrEmpty(idEliminar))
+                if (ctrl is TextBox textbox && !textbox.ReadOnly)
+                    textbox.Clear();
+
+                else if (ctrl is ComboBox combo && combo.DropDownStyle != ComboBoxStyle.DropDownList)
+                    combo.SelectedIndex = -1;
+
+                else if (ctrl is CheckBox checkbox)
+                    checkbox.Checked = false;
+
+                else if (ctrl is RadioButton radio)
+                    radio.Checked = false;
+
+                else if (ctrl is DateTimePicker picker)
+                    picker.Value = DateTime.Now;
+
+                if (ctrl.HasChildren)
+                    LimpiarCamposUsuario(ctrl); // recursividad
+            }
+        }
+        private void btnIDEliminar_Click(object sender, EventArgs e)
+        {
+            string idBuscado = txtID.Text.Trim();
+            if (string.IsNullOrEmpty(idBuscado))
+            {
+                lblResultado.Text = "⚠️ Ingrese un ID válido.";
+                return;
+            }
+
+            string archivo = "tours.csv";
+            if (!File.Exists(archivo))
+            {
+                lblResultado.Text = "📂 El archivo no existe.";
+                return;
+            }
+
+            var lineas = File.ReadAllLines(archivo).ToList();
+            var tourEncontrado = lineas.FirstOrDefault(linea => linea.StartsWith(idBuscado + ";"));
+
+            if (tourEncontrado != null)
+            {
+                var confirmacion = MessageBox.Show($"¿Desea eliminar el tour con ID {idBuscado}?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmacion == DialogResult.Yes)
                 {
-                    MessageBox.Show("Por favor, ingrese el ID del tour a eliminar.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                    lineas.Remove(tourEncontrado);
+                    File.WriteAllLines(archivo, lineas);
+                    lblResultado.Text = "✅ Tour eliminado correctamente.";
+                     LimpiarCamposUsuario(this);
 
-                Tour tourAEliminar = _listaTours.Find(t => t.Id == idEliminar);
 
-                if (tourAEliminar != null)
-                {
-                    DialogResult resultado = MessageBox.Show(
-                        $"¿Está seguro de que desea eliminar el tour '{tourAEliminar.Nombre}' con ID: {tourAEliminar.Id}?",
-                        "Confirmar Eliminación",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question
-                    );
-
-                    if (resultado == DialogResult.Yes)
-                    {
-                        _listaTours.Remove(tourAEliminar);
-                        MessageBox.Show("Tour eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close(); // Cierra el formulario después de eliminar
-                    }
                 }
                 else
                 {
-                    MessageBox.Show($"No se encontró ningún tour con el ID: {idEliminar}", "Tour No Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblResultado.Text = " Cancelado por el usuario.";
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Ocurrió un error al eliminar el tour: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblResultado.Text = "❌ No se encontró ningún tour con ese ID.";
             }
+
+          
+
+
         }
+
+
     }
 }
 

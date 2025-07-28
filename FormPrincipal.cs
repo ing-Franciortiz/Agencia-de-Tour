@@ -9,36 +9,73 @@
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAgregar agregar = new FormAgregar();
-            agregar.MdiParent = this;
-            agregar.Show();
-
+            // Verifica si ya está abierto
             foreach (Form f in this.MdiChildren)
             {
                 if (f is FormAgregar)
                 {
+                    f.WindowState = FormWindowState.Maximized;
                     f.BringToFront();
                     return;
                 }
             }
+
+            // Crear y mostrar en pantalla completa
+            FormAgregar agregar = new FormAgregar
+            {
+                MdiParent = this,
+                StartPosition = FormStartPosition.Manual,
+                WindowState = FormWindowState.Maximized
+            };
+            agregar.Show();
+
+
         }
 
-        private List<Tour> _listaTours = new List<Tour>();
+
+        private void mostrarToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+               // Verifica si ya está abierto
+    foreach (Form f in this.MdiChildren)
+    {
+        if (f is FormMostrar)
+        {
+            f.WindowState = FormWindowState.Maximized;
+            f.BringToFront();
+            return;
+        }
+    }
+
+                    // Crear y mostrar en pantalla completa
+            FormMostrar mostrar = new FormMostrar
+            {
+                 MdiParent = this,
+                 StartPosition = FormStartPosition.Manual,
+                 WindowState = FormWindowState.Maximized
+            };
+                 mostrar.Show();
+
+
+        }
+
         private void eliminarTourToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1Elininar formEliminar = new Form1Elininar(_listaTours);
-            formEliminar.ShowDialog();
-        }
+            if (Application.OpenForms["Form1Elininar"] == null)
+            {
+                Form1Elininar ventanaEliminar = new Form1Elininar();
+                ventanaEliminar.MdiParent = this; // 👈 Le dices que el padre es el actual formulario MDI
+                ventanaEliminar.StartPosition = FormStartPosition.Manual;
+                ventanaEliminar.Dock = DockStyle.Fill;
+                ventanaEliminar.FormBorderStyle = FormBorderStyle.None;
+                ventanaEliminar.Show();
+            }
+            else
+            {
+                Application.OpenForms["Form1Elininar"].BringToFront();
+            }
 
-        private void actualizarToursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Crea una instancia del formulario de actualización, pasándole la lista de tours.
-            FormActualizarTour formActualizar = new FormActualizarTour(_listaTours);
-            // Muestra el formulario como un diálogo modal.
-            // Esto significa que el usuario debe cerrar este formulario antes de interactuar con el principal.
-            formActualizar.ShowDialog();
-        }
 
-       
+
+        }
     }
 }

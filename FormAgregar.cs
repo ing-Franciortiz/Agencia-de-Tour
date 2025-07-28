@@ -114,7 +114,7 @@ namespace Agencia_de_tour
                 clbDestino.Items.AddRange(destinosPorPais[paisSeleccionado].ToArray());
             }
 
-            ActualizarPrecio();
+            ActualizarPrecio(0);
             GenerarNombreTour();
 
         }
@@ -123,20 +123,33 @@ namespace Agencia_de_tour
         {
             this.BeginInvoke((MethodInvoker)delegate
             {
-                ActualizarPrecio();
+                List<string> destinosSeleccionados = clbDestino.CheckedItems.Cast<string>().ToList();
+
+                // Simular el cambio que está por ocurrir
+                string itemActual = clbDestino.Items[e.Index].ToString();
+                if (e.NewValue == CheckState.Checked && !destinosSeleccionados.Contains(itemActual))
+                    destinosSeleccionados.Add(itemActual);
+                else if (e.NewValue == CheckState.Unchecked && destinosSeleccionados.Contains(itemActual))
+                    destinosSeleccionados.Remove(itemActual);
+
+                ActualizarPrecio(destinosSeleccionados.Count);
                 GenerarNombreTour();
-
             });
-        }
 
+
+        }
         private void ActualizarPrecio()
+        {
+            int cantidadCiudades = clbDestino.CheckedItems.Count;
+            ActualizarPrecio(cantidadCiudades);
+        }
+        private void ActualizarPrecio(int cantidadCiudades)
         {
             string pais = cmbPais.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(pais)) return;
             if (!preciosBasePorPais.ContainsKey(pais)) return;
 
             decimal precioBase = preciosBasePorPais[pais];
-            int cantidadCiudades = clbDestino.CheckedItems.Count;
 
             // Ajuste por cantidad de destinos
             if (cantidadCiudades == 1)
@@ -145,6 +158,7 @@ namespace Agencia_de_tour
                 precioBase *= 1.70m;
             else if (cantidadCiudades >= 3)
                 precioBase *= 2.00m;
+
             // Ajuste por duración del viaje
             decimal multiplicador = 1.0m;
             string duracionTexto = cmbDuracion.Text.Trim();
@@ -160,11 +174,14 @@ namespace Agencia_de_tour
                     else multiplicador = 2.5m;
                 }
             }
+
             decimal precioFinal = precioBase * multiplicador;
             txtPrecio.Text = precioFinal.ToString("0.00");
 
             decimal itbis = precioFinal * 0.18m;
             txtITBIS.Text = itbis.ToString("0.00");
+
+
 
         }
 
@@ -205,15 +222,26 @@ namespace Agencia_de_tour
             decimal itbis = precio * 0.18m;
             txtITBIS.Text = itbis.ToString("0.00");
 
-            string estado = "Automatico";
+            string estado = "Vijente";
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            string ruta = "tours_nuevos.csv";
 
-            string nuevaLinea = $"{idNuevo},{nombreTour},{pais},{destinosSeleccionados},{precio:0.00},{itbis:0.00},{estado}";
-            File.AppendAllText("tours.csv", nuevaLinea + Environment.NewLine);
 
+            string nuevaLinea = $"{idNuevo};{nombreTour};{pais};{destinosSeleccionados};{duracion};{precio:0.00};{itbis:0.00};{estado};{fecha}";
+            File.AppendAllText("tours_nuevo.csv", nuevaLinea + Environment.NewLine);
+            FormMostrar frmMostrar = new FormMostrar();
+            frmMostrar.CargarTours();
+            frmMostrar.StartPosition = FormStartPosition.CenterScreen;
+            frmMostrar.Show();
+
+            
             MessageBox.Show("Tour guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             txtID.Text = GenerarID();
             btnLimpiar.PerformClick();
+
+            
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -234,7 +262,7 @@ namespace Agencia_de_tour
 
         private void cmbDuracion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActualizarPrecio();
+            ActualizarPrecio(0);
             GenerarNombreTour();
 
         }

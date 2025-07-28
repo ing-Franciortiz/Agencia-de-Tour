@@ -28,45 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtIdEliminar = new TextBox();
-            btnEliminarTour = new Button();
-            lblMensaje = new Label();
+            txtID = new TextBox();
+            btnIDEliminar = new Button();
+            lblIDEliminar = new Label();
+            lblResultado = new Label();
             SuspendLayout();
             // 
-            // txtIdEliminar
+            // txtID
             // 
-            txtIdEliminar.Location = new Point(133, 12);
-            txtIdEliminar.Name = "txtIdEliminar";
-            txtIdEliminar.Size = new Size(125, 27);
-            txtIdEliminar.TabIndex = 0;
+            txtID.Location = new Point(412, 118);
+            txtID.Margin = new Padding(8, 7, 8, 7);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(306, 55);
+            txtID.TabIndex = 0;
             // 
-            // btnEliminarTour
+            // btnIDEliminar
             // 
-            btnEliminarTour.Location = new Point(65, 60);
-            btnEliminarTour.Name = "btnEliminarTour";
-            btnEliminarTour.Size = new Size(94, 29);
-            btnEliminarTour.TabIndex = 1;
-            btnEliminarTour.Text = "button1";
-            btnEliminarTour.UseVisualStyleBackColor = true;
-            btnEliminarTour.Click += btnEliminarTour_Click;
+            btnIDEliminar.Location = new Point(412, 211);
+            btnIDEliminar.Margin = new Padding(8, 7, 8, 7);
+            btnIDEliminar.Name = "btnIDEliminar";
+            btnIDEliminar.Size = new Size(235, 70);
+            btnIDEliminar.TabIndex = 1;
+            btnIDEliminar.Text = "Eliminar Tour";
+            btnIDEliminar.UseVisualStyleBackColor = true;
+            btnIDEliminar.Click += btnIDEliminar_Click;
             // 
-            // lblMensaje
+            // lblIDEliminar
             // 
-            lblMensaje.AutoSize = true;
-            lblMensaje.Location = new Point(158, 120);
-            lblMensaje.Name = "lblMensaje";
-            lblMensaje.Size = new Size(50, 20);
-            lblMensaje.TabIndex = 2;
-            lblMensaje.Text = "label1";
+            lblIDEliminar.AutoSize = true;
+            lblIDEliminar.Location = new Point(412, 43);
+            lblIDEliminar.Margin = new Padding(8, 0, 8, 0);
+            lblIDEliminar.Name = "lblIDEliminar";
+            lblIDEliminar.Size = new Size(521, 48);
+            lblIDEliminar.TabIndex = 2;
+            lblIDEliminar.Text = "Ingrese el ID del tour a eliminar";
+            // 
+            // lblResultado
+            // 
+            lblResultado.AutoSize = true;
+            lblResultado.Location = new Point(911, 135);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(115, 48);
+            lblResultado.TabIndex = 3;
+            lblResultado.Text = "label1";
             // 
             // Form1Elininar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(lblMensaje);
-            Controls.Add(btnEliminarTour);
-            Controls.Add(txtIdEliminar);
+            ClientSize = new Size(2000, 1080);
+            Controls.Add(lblResultado);
+            Controls.Add(lblIDEliminar);
+            Controls.Add(btnIDEliminar);
+            Controls.Add(txtID);
+            Margin = new Padding(8, 7, 8, 7);
             Name = "Form1Elininar";
             Text = "Form1Elininar";
             ResumeLayout(false);
@@ -75,8 +90,9 @@
 
         #endregion
 
-        private TextBox txtIdEliminar;
-        private Button btnEliminarTour;
-        private Label lblMensaje;
+        private TextBox txtID;
+        private Button btnIDEliminar;
+        private Label lblIDEliminar;
+        private Label lblResultado;
     }
 }
