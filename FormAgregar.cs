@@ -81,9 +81,9 @@ namespace Agencia_de_tour
         {
             int maxID = 0;
 
-            if (File.Exists("tours.csv"))
+            if (File.Exists("tours_nuevo.csv"))
             {
-                var lineas = File.ReadAllLines("tours.csv");
+                var lineas = File.ReadAllLines("tours_nuevo.csv");
 
                 foreach (var linea in lineas)
                 {
@@ -195,9 +195,9 @@ namespace Agencia_de_tour
 
             string idNuevo = txtID.Text.Trim();
 
-            if (File.Exists("tours.csv"))
+            if (File.Exists("tours_nuevo.csv"))
             {
-                var lineas = File.ReadAllLines("tours.csv");
+                var lineas = File.ReadAllLines("tours_nuevo.csv");
                 bool idExistente = lineas.Any(l => l.StartsWith(idNuevo + ","));
                 if (idExistente)
                 {
@@ -222,7 +222,7 @@ namespace Agencia_de_tour
             decimal itbis = precio * 0.18m;
             txtITBIS.Text = itbis.ToString("0.00");
 
-            string estado = "Vijente";
+            string estado = "Vigente";
             string fecha = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             string ruta = "tours_nuevos.csv";
 

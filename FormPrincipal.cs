@@ -62,12 +62,24 @@
         {
             if (Application.OpenForms["Form1Elininar"] == null)
             {
-                Form1Elininar ventanaEliminar = new Form1Elininar();
-                ventanaEliminar.MdiParent = this; // 👈 Le dices que el padre es el actual formulario MDI
-                ventanaEliminar.StartPosition = FormStartPosition.Manual;
-                ventanaEliminar.Dock = DockStyle.Fill;
-                ventanaEliminar.FormBorderStyle = FormBorderStyle.None;
-                ventanaEliminar.Show();
+                // Obtener el formulario de mostrar tours
+                FormMostrar ventanaMostrar = Application.OpenForms
+                    .OfType<FormMostrar>()
+                    .FirstOrDefault();
+
+                if (ventanaMostrar != null)
+                {
+                    Form1Elininar ventanaEliminar = new Form1Elininar(ventanaMostrar); // ← PASA LA REFERENCIA AQUÍ
+                    ventanaEliminar.MdiParent = this;
+                    ventanaEliminar.StartPosition = FormStartPosition.Manual;
+                    ventanaEliminar.Dock = DockStyle.Fill;
+                    ventanaEliminar.FormBorderStyle = FormBorderStyle.None;
+                    ventanaEliminar.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Primero debes abrir el formulario de mostrar tours.");
+                }
             }
             else
             {

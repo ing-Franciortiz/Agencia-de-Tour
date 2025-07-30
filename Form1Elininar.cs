@@ -14,12 +14,15 @@ namespace Agencia_de_tour
 
     {
 
+        private FormMostrar frmMostrar;
 
-        public Form1Elininar()
+        public Form1Elininar(FormMostrar mostrarForm)
         {
             InitializeComponent();
-
+            frmMostrar = mostrarForm;
         }
+
+
         private void LimpiarCamposUsuario(Control parent)
         {
             foreach (Control ctrl in parent.Controls)
@@ -52,7 +55,7 @@ namespace Agencia_de_tour
                 return;
             }
 
-            string archivo = "tours.csv";
+            string archivo = "tours_nuevo.csv";
             if (!File.Exists(archivo))
             {
                 lblResultado.Text = "📂 El archivo no existe.";
@@ -84,9 +87,9 @@ namespace Agencia_de_tour
                 lblResultado.Text = "❌ No se encontró ningún tour con ese ID.";
             }
 
-          
 
 
+            frmMostrar.CargarTours();
         }
 
 
