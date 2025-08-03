@@ -93,7 +93,7 @@ namespace Agencia_de_tour
         private void GenerarNombreTour()
         {
 
-           
+
 
 
             string pais = cmbPais.SelectedItem?.ToString() ?? "";
@@ -109,11 +109,11 @@ namespace Agencia_de_tour
             string destinosTexto = string.Join(", ", destinos);
             txtNombreTour.Text = $"{pais} - {duracion} - {destinosTexto}";
 
-           
+
         }
 
 
-          private string GenerarID()
+        private string GenerarID()
         {
             string ruta = "tours_nuevo.csv";
             int maxID = 0;
@@ -136,9 +136,9 @@ namespace Agencia_de_tour
             return nuevoID.ToString("D4"); // Ejemplo: "0002"
         }
 
-        
 
-        
+
+
 
         private void cmbPais_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -300,8 +300,8 @@ namespace Agencia_de_tour
 
 
             MessageBox.Show("Tour guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            
+
+
             btnLimpiar.PerformClick();
 
             if (string.IsNullOrWhiteSpace(idNuevo))
@@ -311,7 +311,7 @@ namespace Agencia_de_tour
             }
 
             // Validar si ya existe el ID
-          
+
 
 
         }
@@ -389,7 +389,7 @@ namespace Agencia_de_tour
 
 
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
-        
+
         {
             // Permitir solo números y teclas de control (como Backspace)
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -398,6 +398,9 @@ namespace Agencia_de_tour
             }
         }
 
+        private void lblDestino_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

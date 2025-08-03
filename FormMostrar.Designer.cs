@@ -54,7 +54,7 @@
             dataGridView1.Margin = new Padding(1);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 123;
-            dataGridView1.Size = new Size(1254, 286);
+            dataGridView1.Size = new Size(1173, 170);
             dataGridView1.TabIndex = 0;
             // 
             // ID
