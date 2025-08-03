@@ -57,8 +57,39 @@ namespace Agencia_de_tour
 
                 }
             }
-        }
-        
 
+        }
+
+
+
+
+        private void btnAbrirActualizar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+            string tourId = txtIDActualizar.Text.Trim();
+
+            if (string.IsNullOrEmpty(tourId))
+            {
+                MessageBox.Show("Por favor, ingresa el ID del tour para actualizar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            FormActualizar frmActualizar = new FormActualizar();
+            frmActualizar.TourIDToUpdate = tourId;
+            frmActualizar.ShowDialog();
+
+
+        }
+
+        private void txtIDActualizar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+ 
+
+

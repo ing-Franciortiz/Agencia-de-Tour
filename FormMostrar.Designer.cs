@@ -40,6 +40,8 @@
             Duracion = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
+            btnAbrirActualizar = new Button();
+            txtIDActualizar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)tourBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -48,10 +50,11 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Pais, Destino, Precio, ITBS, Duracion, Estado, Fecha });
-            dataGridView1.Location = new Point(1, 3);
+            dataGridView1.Location = new Point(0, 10);
+            dataGridView1.Margin = new Padding(1);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 123;
-            dataGridView1.Size = new Size(2827, 727);
+            dataGridView1.Size = new Size(1254, 286);
             dataGridView1.TabIndex = 0;
             // 
             // ID
@@ -117,17 +120,39 @@
             Fecha.Name = "Fecha";
             Fecha.Width = 300;
             // 
+            // btnAbrirActualizar
+            // 
+            btnAbrirActualizar.Location = new Point(434, 326);
+            btnAbrirActualizar.Name = "btnAbrirActualizar";
+            btnAbrirActualizar.Size = new Size(94, 29);
+            btnAbrirActualizar.TabIndex = 1;
+            btnAbrirActualizar.Text = "Actualizar";
+            btnAbrirActualizar.UseVisualStyleBackColor = true;
+            btnAbrirActualizar.Click += btnAbrirActualizar_Click;
+            // 
+            // txtIDActualizar
+            // 
+            txtIDActualizar.Location = new Point(620, 331);
+            txtIDActualizar.Name = "txtIDActualizar";
+            txtIDActualizar.Size = new Size(125, 27);
+            txtIDActualizar.TabIndex = 2;
+            txtIDActualizar.TextChanged += txtIDActualizar_TextChanged;
+            // 
             // FormMostrar
             // 
-            AutoScaleDimensions = new SizeF(20F, 48F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(3844, 921);
+            ClientSize = new Size(1298, 602);
+            Controls.Add(txtIDActualizar);
+            Controls.Add(btnAbrirActualizar);
             Controls.Add(dataGridView1);
+            Margin = new Padding(1);
             Name = "FormMostrar";
             Text = "Mostrar Tour";
             ((System.ComponentModel.ISupportInitialize)tourBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -142,5 +167,7 @@
         private DataGridViewTextBoxColumn Duracion;
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Fecha;
+        private Button btnAbrirActualizar;
+        private TextBox txtIDActualizar;
     }
 }
