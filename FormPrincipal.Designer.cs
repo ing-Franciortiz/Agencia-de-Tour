@@ -45,66 +45,66 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { mostrarToToolStripMenuItem, agregarToolStripMenuItem, actualizarToursToolStripMenuItem, eliminarTourToolStripMenuItem, exportarToolStripMenuItem, salirToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(2, 1, 0, 1);
-            menuStrip1.Size = new Size(770, 26);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(2296, 61);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // mostrarToToolStripMenuItem
             // 
             mostrarToToolStripMenuItem.Name = "mostrarToToolStripMenuItem";
-            mostrarToToolStripMenuItem.Size = new Size(111, 24);
+            mostrarToToolStripMenuItem.Size = new Size(263, 57);
             mostrarToToolStripMenuItem.Text = "Mostrar tours";
             mostrarToToolStripMenuItem.Click += mostrarToToolStripMenuItem_Click;
             // 
             // agregarToolStripMenuItem
             // 
             agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            agregarToolStripMenuItem.Size = new Size(110, 24);
+            agregarToolStripMenuItem.Size = new Size(255, 57);
             agregarToolStripMenuItem.Text = "Agregar Tour";
             agregarToolStripMenuItem.Click += agregarToolStripMenuItem_Click;
             // 
             // actualizarToursToolStripMenuItem
             // 
             actualizarToursToolStripMenuItem.Name = "actualizarToursToolStripMenuItem";
-            actualizarToursToolStripMenuItem.Size = new Size(128, 24);
+            actualizarToursToolStripMenuItem.Size = new Size(297, 57);
             actualizarToursToolStripMenuItem.Text = "Actualizar Tours";
             actualizarToursToolStripMenuItem.Click += actualizarToursToolStripMenuItem_Click;
             // 
             // eliminarTourToolStripMenuItem
             // 
             eliminarTourToolStripMenuItem.Name = "eliminarTourToolStripMenuItem";
-            eliminarTourToolStripMenuItem.Size = new Size(110, 24);
+            eliminarTourToolStripMenuItem.Size = new Size(254, 57);
             eliminarTourToolStripMenuItem.Text = "Eliminar Tour";
             eliminarTourToolStripMenuItem.Click += eliminarTourToolStripMenuItem_Click;
             // 
             // exportarToolStripMenuItem
             // 
             exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            exportarToolStripMenuItem.Size = new Size(116, 24);
+            exportarToolStripMenuItem.Size = new Size(272, 57);
             exportarToolStripMenuItem.Text = "Exportar tours";
+            exportarToolStripMenuItem.Click += exportarToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(52, 24);
+            salirToolStripMenuItem.Size = new Size(116, 57);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click_1;
             // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Highlight;
-            ClientSize = new Size(770, 440);
+            ClientSize = new Size(2296, 1056);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.Desktop;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(1);
+            Margin = new Padding(2);
             Name = "FormPrincipal";
             Text = "Agencia de Tour";
-            Load += FormPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

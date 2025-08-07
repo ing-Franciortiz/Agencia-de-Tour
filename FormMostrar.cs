@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace Agencia_de_tour
 {
+
     public partial class FormMostrar : Form
     {
         public FormMostrar()
@@ -26,6 +27,25 @@ namespace Agencia_de_tour
 
             CargarTours();
         }
+        public DataGridView DataGridViewPrincipal => dataGridView1;
+        public void RefrescarDatos()
+        {
+            dataGridView1.Rows.Clear();
+
+            if (!File.Exists("tours_nuevo.csv")) return;
+
+            var lineas = File.ReadAllLines("tours_nuevo.csv");
+            foreach (var linea in lineas)
+            {
+                if (string.IsNullOrWhiteSpace(linea)) continue;
+
+                var partes = linea.Split(';');
+                if (partes.Length >= dataGridView1.Columns.Count)
+                {
+                    dataGridView1.Rows.Add(partes);
+                }
+            }
+        }
 
         public void CargarTours()
         {
@@ -46,19 +66,9 @@ namespace Agencia_de_tour
             }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormAgregar formAgregar = new FormAgregar(this); // ✅ Pasa la referencia actual
-            formAgregar.Show();
-        }
 
-
-
-        private void btnAbrirActualizar_Click_1(object sender, EventArgs e)
-        {
-            FormActualizar formActualizar = new FormActualizar();
-            formActualizar.MdiParent = this.MdiParent; // Esto lo encaja dentro del formulario principal
-            formActualizar.Show();
         }
     }
 }

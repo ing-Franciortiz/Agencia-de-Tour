@@ -4,122 +4,112 @@
     {
         private FormMostrar formMostrar;
         private bool eliminarAbierto = false;
+        private FormActualizar formActualizar;
+        private bool actualizarAbierto = false;
+
         public FormPrincipal()
         {
             InitializeComponent();
-
             formMostrar = new FormMostrar();
+        }
 
+        // Método reutilizable para mostrar formularios
+        private void MostrarFormularioEnContenedor(Form formulario)
+        {
+            formulario.MdiParent = this;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            formulario.WindowState = FormWindowState.Maximized;
+            formulario.StartPosition = FormStartPosition.Manual;
+            formulario.Show();
+        }
+
+        // Método genérico para verificar si ya está abierto
+        private bool TraerAlFrenteSiExiste<T>() where T : Form
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f is T)
+                {
+                    f.WindowState = FormWindowState.Maximized;
+                    f.BringToFront();
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Verifica si ya está abierto
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f is FormAgregar)
-                {
-                    f.WindowState = FormWindowState.Maximized;
-                    f.BringToFront();
-                    return;
-                }
-            }
-
-            // Crear y mostrar en pantalla completa
-            FormAgregar agregar = new FormAgregar
-            {
-                MdiParent = this,
-                StartPosition = FormStartPosition.Manual,
-                WindowState = FormWindowState.Maximized
-            };
-            agregar.Show();
-
-
+            if (TraerAlFrenteSiExiste<FormAgregar>()) return;
+            FormAgregar agregar = new FormAgregar();
+            MostrarFormularioEnContenedor(agregar);
         }
-
 
         private void mostrarToToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Verifica si ya está abierto
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f is FormMostrar)
-                {
-                    f.WindowState = FormWindowState.Maximized;
-                    f.BringToFront();
-                    return;
-                }
-            }
-
-            // Crear y mostrar en pantalla completa
-            FormMostrar mostrar = new FormMostrar
-            {
-                MdiParent = this,
-                StartPosition = FormStartPosition.Manual,
-                WindowState = FormWindowState.Maximized
-            };
-            mostrar.Show();
-
-
+            if (TraerAlFrenteSiExiste<FormMostrar>()) return;
+            formMostrar = new FormMostrar();
+            MostrarFormularioEnContenedor(formMostrar);
         }
 
         private void eliminarTourToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!eliminarAbierto)
-            {
-                FormMostrar ventanaMostrar = formMostrar; // Usa la instancia ya creada
-
-                if (ventanaMostrar != null)
-                {
-                    Form1Elininar ventanaEliminar = new Form1Elininar(ventanaMostrar);
-                    ventanaEliminar.MdiParent = this;
-                    ventanaEliminar.FormClosed += (s, args) => eliminarAbierto = false; // Cuando se cierre
-                    ventanaEliminar.Show();
-                    eliminarAbierto = true; // Marcar que está abierto
-                }
-                else
-                {
-                    MessageBox.Show("Primero debes abrir el formulario de mostrar tours.");
-                }
-            }
-            else
+            if (eliminarAbierto)
             {
                 MessageBox.Show("La ventana de eliminación ya está abierta.");
+                return;
             }
 
+            if (formMostrar == null)
+            {
+                MessageBox.Show("Primero debes abrir el formulario de mostrar tours.");
+                return;
+            }
 
+            Form1Elininar ventanaEliminar = new Form1Elininar(formMostrar);
+            ventanaEliminar.FormClosed += (s, args) => eliminarAbierto = false;
+            MostrarFormularioEnContenedor(ventanaEliminar);
+            eliminarAbierto = true;
         }
-
-
-
-
-
-        
 
         private void actualizarToursToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (actualizarAbierto)
+            {
+                formActualizar.Focus();
+                return;
+            }
 
+            if (formMostrar == null)
+            {
+                MessageBox.Show("Primero debes abrir el formulario de mostrar tours.");
+                return;
+            }
 
-
-
+            formActualizar = new FormActualizar(formMostrar);
+            formActualizar.FormClosed += (s, args) => actualizarAbierto = false;
+            MostrarFormularioEnContenedor(formActualizar);
+            actualizarAbierto = true;
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
+        private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (formMostrar == null)
+            {
+                MessageBox.Show("Primero debes abrir el formulario de mostrar tours.");
+                return;
+            }
 
+            FormExportar formExportar = new FormExportar(formMostrar);
+            MostrarFormularioEnContenedor(formExportar);
         }
-
-
 
         private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            FormSalir Salir = new FormSalir
-            {
-                MdiParent = this,
-                StartPosition = FormStartPosition.Manual,
-                WindowState = FormWindowState.Maximized
-            };
-            Salir.Show();
+            if (TraerAlFrenteSiExiste<FormSalir>()) return;
+            FormSalir salir = new FormSalir();
+            MostrarFormularioEnContenedor(salir);
         }
     }
 }

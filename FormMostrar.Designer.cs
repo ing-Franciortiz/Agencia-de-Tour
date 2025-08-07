@@ -41,7 +41,6 @@
             Estado = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            btnAbrirActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)tourBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -50,12 +49,13 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Pais, Destino, Precio, ITBS, Duracion, Estado, Fecha });
-            dataGridView1.Location = new Point(-5, 71);
+            dataGridView1.Location = new Point(-5, 92);
             dataGridView1.Margin = new Padding(1);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 123;
-            dataGridView1.Size = new Size(1173, 145);
+            dataGridView1.Size = new Size(2811, 1952);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ID
             // 
@@ -124,28 +124,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(433, 21);
+            label1.Location = new Point(381, -1);
             label1.Name = "label1";
-            label1.Size = new Size(212, 38);
+            label1.Size = new Size(506, 92);
             label1.TabIndex = 3;
             label1.Text = "Tour del Mar";
             // 
-            // btnAbrirActualizar
-            // 
-            btnAbrirActualizar.Location = new Point(524, 242);
-            btnAbrirActualizar.Name = "btnAbrirActualizar";
-            btnAbrirActualizar.Size = new Size(94, 29);
-            btnAbrirActualizar.TabIndex = 5;
-            btnAbrirActualizar.Text = "button1";
-            btnAbrirActualizar.UseVisualStyleBackColor = true;
-            btnAbrirActualizar.Click += btnAbrirActualizar_Click_1;
-            // 
             // FormMostrar
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(23F, 52F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1142, 512);
-            Controls.Add(btnAbrirActualizar);
+            ClientSize = new Size(2967, 2045);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -171,6 +160,5 @@
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Fecha;
         private Label label1;
-        private Button btnAbrirActualizar;
     }
 }

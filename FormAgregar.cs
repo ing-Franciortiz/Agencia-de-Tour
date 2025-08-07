@@ -20,18 +20,14 @@ namespace Agencia_de_tour
 { "Estados Unidos", 3000m },
 { "Brasil", 2300m }
 };
-        public class Tour
-        {
-            public int ID { get; set; }
-            public string Nombre { get; set; }
-            // otros campos...
-        }
+       
         private FormMostrar formMostrar;
 
         public FormAgregar(FormMostrar formMostrar)
         {
             InitializeComponent();
             this.formMostrar = formMostrar;
+            this.Load += FormAgregar_Load;
         }
         Dictionary<string, List<string>> destinosPorPais = new Dictionary<string, List<string>>()
     {
@@ -49,6 +45,7 @@ namespace Agencia_de_tour
             InitializeComponent();
             clbDestino.ItemCheck += clbDestino_ItemCheck;
             txtID.MaxLength = 5;
+            this.Load += FormAgregar_Load;
         }
 
         private void FormAgregar_Load(object sender, EventArgs e)
@@ -61,19 +58,9 @@ namespace Agencia_de_tour
 
 
 
-            txtID.Text = GenerarID();
-            string idNuevo = txtID.Text.Trim();
+            string idNuevo = GenerarID();
+            txtID.Text = idNuevo;
 
-            if (File.Exists("tours_nuevo.csv"))
-            {
-                var lineas = File.ReadAllLines("tours_nuevo.csv");
-                bool idExistente = lineas.Any(l => l.StartsWith(idNuevo + ","));
-                if (idExistente)
-                {
-                    MessageBox.Show("El ID ya está registrado en el sistema.");
-                    return;
-                }
-            }
 
 
 
@@ -112,23 +99,23 @@ namespace Agencia_de_tour
         private string GenerarID()
         {
             string ruta = "tours_nuevo.csv";
-            int maxID = 0;
+            int nuevoID = 1;
 
             if (File.Exists(ruta))
             {
                 var lineas = File.ReadAllLines(ruta);
-                foreach (var linea in lineas)
+                var idsExistentes = lineas
+                    .Select(l => l.Split(';')[0])
+                    .Where(id => int.TryParse(id, out _))
+                    .Select(id => int.Parse(id))
+                    .ToList();
+
+                if (idsExistentes.Any())
                 {
-                    var partes = linea.Split(';');
-                    if (partes.Length > 0 && int.TryParse(partes[0], out int idActual))
-                    {
-                        if (idActual > maxID)
-                            maxID = idActual;
-                    }
+                    nuevoID = idsExistentes.Max() + 1;
                 }
             }
 
-            int nuevoID = maxID + 1;
             return nuevoID.ToString("D4"); // Ejemplo: "0002"
         }
 
@@ -329,6 +316,7 @@ namespace Agencia_de_tour
 
 
             btnLimpiar.PerformClick();
+            txtID.Text = GenerarID();
 
             if (string.IsNullOrWhiteSpace(idNuevo))
             {
@@ -366,56 +354,8 @@ namespace Agencia_de_tour
             ActualizarPrecioYITBIS();
         }
 
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            saveFileDialog.Filter = "Archivos CSV (*.csv)|*.csv|Todos los archivos (*.*)|*.*";
-            saveFileDialog.Title = "Guardar archivo de tours";
-            saveFileDialog.FileName = "tours_exportados.csv";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-
-                    string sourceFilePath = "tours_nuevo.csv";
-
-                    if (File.Exists(sourceFilePath))
-                    {
-
-                        string destinationFilePath = saveFileDialog.FileName;
-
-                        File.Copy(sourceFilePath, destinationFilePath, true);
-                        MessageBox.Show($"Archivo exportado correctamente a: {destinationFilePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("El archivo de tours ('tours_nuevo.csv') no existe en la carpeta de la aplicación para exportar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ocurrió un error al exportar el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
-
-        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
-
-        {
-            // Permitir solo números y teclas de control (como Backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Bloquear la tecla
-            }
-        }
-
-        private void lblEstado_Click(object sender, EventArgs e)
-        {
-
-        }
+     
+       
 
     }
 }

@@ -107,15 +107,7 @@ namespace Agencia_de_tour
             // Estado
             lblEstado.Text = partes[7];
 
-            // Fecha
-            if (DateTime.TryParse(partes[8], out DateTime fecha))
-            {
-                dtpFecha.Value = fecha;
-            }
-            else
-            {
-                dtpFecha.Value = DateTime.Today;
-            }
+
         }
 
         private void cmbPais_SelectedIndexChanged(object sender, EventArgs e)
@@ -267,28 +259,6 @@ namespace Agencia_de_tour
         }
 
 
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void lblEstado_Click(object sender, EventArgs e) { }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-            // Esto puedes dejarlo vacío o eliminarlo si no lo usas
-        }
-
-
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             string idBuscado = txtID.Text.Trim();
@@ -327,7 +297,6 @@ namespace Agencia_de_tour
             string precio = txtPrecio.Text.Trim();
             string itbis = txtITBIS.Text.Trim();
             string estado = lblEstado.Text.Trim();
-            string fecha = dtpFecha.Value.ToShortDateString();
 
             var destinosSeleccionados = clbDestino.CheckedItems.Cast<string>().ToList();
             string destinos = string.Join("|", destinosSeleccionados);
@@ -363,9 +332,26 @@ namespace Agencia_de_tour
             File.WriteAllLines(ruta, lineas);
             MessageBox.Show("Tour actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // ✅ Refrescar la vista en FormMostrar
+            formMostrar?.RefrescarDatos();
+            btnLimpiar.PerformClick();
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombreTour.Text = "";
+            txtNombreTour.Text = "";
+            cmbPais.SelectedIndex = -1;
+            clbDestino.Items.Clear();
+            txtPrecio.Text = "";
+            txtITBIS.Text = "";
+            cmbDuracion.Text = "";
+            lblEstado.Text = "Automatico";
+        }
+
+        
     }
-    
+
 }
 
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dtpFecha = new DateTimePicker();
             btnBuscar = new Button();
             btnActualizar = new Button();
             lblFecha = new Label();
@@ -47,20 +46,15 @@
             txtITBIS = new TextBox();
             txtPrecio = new TextBox();
             cmbPais = new ComboBox();
+            btnLimpiar = new Button();
             SuspendLayout();
-            // 
-            // dtpFecha
-            // 
-            dtpFecha.Location = new Point(437, 41);
-            dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(282, 27);
-            dtpFecha.TabIndex = 62;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(250, 82);
+            btnBuscar.Location = new Point(917, 228);
+            btnBuscar.Margin = new Padding(8, 7, 8, 7);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(94, 29);
+            btnBuscar.Size = new Size(235, 70);
             btnBuscar.TabIndex = 61;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -69,10 +63,10 @@
             // btnActualizar
             // 
             btnActualizar.BackColor = SystemColors.ActiveBorder;
-            btnActualizar.Location = new Point(172, 332);
-            btnActualizar.Margin = new Padding(2);
+            btnActualizar.Location = new Point(430, 797);
+            btnActualizar.Margin = new Padding(5);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(90, 30);
+            btnActualizar.Size = new Size(225, 72);
             btnActualizar.TabIndex = 60;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = false;
@@ -81,40 +75,40 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(157, 271);
-            lblFecha.Margin = new Padding(2, 0, 2, 0);
+            lblFecha.Location = new Point(392, 650);
+            lblFecha.Margin = new Padding(5, 0, 5, 0);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(0, 20);
+            lblFecha.Size = new Size(0, 48);
             lblFecha.TabIndex = 59;
             // 
             // lblEstado
             // 
             lblEstado.AutoSize = true;
             lblEstado.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEstado.Location = new Point(613, 178);
-            lblEstado.Margin = new Padding(2, 0, 2, 0);
+            lblEstado.Location = new Point(1532, 427);
+            lblEstado.Margin = new Padding(5, 0, 5, 0);
             lblEstado.Name = "lblEstado";
-            lblEstado.Size = new Size(66, 30);
+            lblEstado.Size = new Size(152, 70);
             lblEstado.TabIndex = 58;
             lblEstado.Text = "Estado";
             // 
             // cmbDuracion
             // 
             cmbDuracion.FormattingEnabled = true;
-            cmbDuracion.Location = new Point(190, 276);
-            cmbDuracion.Margin = new Padding(2);
+            cmbDuracion.Location = new Point(475, 662);
+            cmbDuracion.Margin = new Padding(5);
             cmbDuracion.Name = "cmbDuracion";
-            cmbDuracion.Size = new Size(130, 28);
+            cmbDuracion.Size = new Size(319, 56);
             cmbDuracion.TabIndex = 57;
             // 
             // lblDestino
             // 
             lblDestino.AutoSize = true;
             lblDestino.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDestino.Location = new Point(343, 243);
-            lblDestino.Margin = new Padding(2, 0, 2, 0);
+            lblDestino.Location = new Point(858, 583);
+            lblDestino.Margin = new Padding(5, 0, 5, 0);
             lblDestino.Name = "lblDestino";
-            lblDestino.Size = new Size(81, 30);
+            lblDestino.Size = new Size(188, 70);
             lblDestino.TabIndex = 56;
             lblDestino.Text = "Destinos";
             // 
@@ -122,10 +116,10 @@
             // 
             lblPais.AutoSize = true;
             lblPais.Font = new Font("Myanmar Text", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPais.Location = new Point(349, 178);
-            lblPais.Margin = new Padding(2, 0, 2, 0);
+            lblPais.Location = new Point(872, 427);
+            lblPais.Margin = new Padding(5, 0, 5, 0);
             lblPais.Name = "lblPais";
-            lblPais.Size = new Size(53, 36);
+            lblPais.Size = new Size(127, 85);
             lblPais.TabIndex = 55;
             lblPais.Text = "Pais";
             // 
@@ -133,10 +127,10 @@
             // 
             lblID.AutoSize = true;
             lblID.Font = new Font("Myanmar Text", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblID.Location = new Point(172, 26);
-            lblID.Margin = new Padding(2, 0, 2, 0);
+            lblID.Location = new Point(531, 213);
+            lblID.Margin = new Padding(5, 0, 5, 0);
             lblID.Name = "lblID";
-            lblID.Size = new Size(36, 36);
+            lblID.Size = new Size(87, 85);
             lblID.TabIndex = 54;
             lblID.Text = "ID";
             // 
@@ -144,10 +138,10 @@
             // 
             lBLDuraccion.AutoSize = true;
             lBLDuraccion.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lBLDuraccion.Location = new Point(101, 277);
-            lBLDuraccion.Margin = new Padding(2, 0, 2, 0);
+            lBLDuraccion.Location = new Point(252, 665);
+            lBLDuraccion.Margin = new Padding(5, 0, 5, 0);
             lBLDuraccion.Name = "lBLDuraccion";
-            lBLDuraccion.Size = new Size(85, 30);
+            lBLDuraccion.Size = new Size(198, 70);
             lBLDuraccion.TabIndex = 53;
             lBLDuraccion.Text = "Duracion";
             // 
@@ -155,10 +149,10 @@
             // 
             lBLITBIS.AutoSize = true;
             lBLITBIS.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lBLITBIS.Location = new Point(127, 232);
-            lBLITBIS.Margin = new Padding(2, 0, 2, 0);
+            lBLITBIS.Location = new Point(318, 557);
+            lBLITBIS.Margin = new Padding(5, 0, 5, 0);
             lBLITBIS.Name = "lBLITBIS";
-            lBLITBIS.Size = new Size(54, 30);
+            lBLITBIS.Size = new Size(124, 70);
             lBLITBIS.TabIndex = 52;
             lBLITBIS.Text = "ITBIS";
             // 
@@ -166,10 +160,10 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(127, 184);
-            lblPrecio.Margin = new Padding(2, 0, 2, 0);
+            lblPrecio.Location = new Point(318, 442);
+            lblPrecio.Margin = new Padding(5, 0, 5, 0);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(62, 30);
+            lblPrecio.Size = new Size(145, 70);
             lblPrecio.TabIndex = 51;
             lblPrecio.Text = "Precio";
             // 
@@ -177,70 +171,81 @@
             // 
             lbl.AutoSize = true;
             lbl.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl.Location = new Point(22, 131);
-            lbl.Margin = new Padding(2, 0, 2, 0);
+            lbl.Location = new Point(45, 344);
+            lbl.Margin = new Padding(5, 0, 5, 0);
             lbl.Name = "lbl";
-            lbl.Size = new Size(151, 30);
+            lbl.Size = new Size(347, 70);
             lbl.TabIndex = 50;
             lbl.Text = "Nombre de Tour ";
             // 
             // clbDestino
             // 
             clbDestino.FormattingEnabled = true;
-            clbDestino.Location = new Point(439, 243);
-            clbDestino.Margin = new Padding(2);
+            clbDestino.Location = new Point(1098, 583);
+            clbDestino.Margin = new Padding(5);
             clbDestino.Name = "clbDestino";
-            clbDestino.Size = new Size(174, 70);
+            clbDestino.Size = new Size(429, 274);
             clbDestino.TabIndex = 49;
             // 
             // txtID
             // 
-            txtID.Location = new Point(234, 28);
-            txtID.Margin = new Padding(2);
+            txtID.Location = new Point(663, 236);
+            txtID.Margin = new Padding(5);
             txtID.Name = "txtID";
             txtID.RightToLeft = RightToLeft.No;
-            txtID.Size = new Size(86, 27);
+            txtID.Size = new Size(209, 55);
             txtID.TabIndex = 48;
             // 
             // txtNombreTour
             // 
-            txtNombreTour.Location = new Point(172, 126);
-            txtNombreTour.Margin = new Padding(2);
+            txtNombreTour.Location = new Point(430, 344);
+            txtNombreTour.Margin = new Padding(5);
             txtNombreTour.Name = "txtNombreTour";
-            txtNombreTour.Size = new Size(372, 27);
+            txtNombreTour.Size = new Size(924, 55);
             txtNombreTour.TabIndex = 47;
             // 
             // txtITBIS
             // 
-            txtITBIS.Location = new Point(185, 228);
-            txtITBIS.Margin = new Padding(2);
+            txtITBIS.Location = new Point(462, 547);
+            txtITBIS.Margin = new Padding(5);
             txtITBIS.Name = "txtITBIS";
-            txtITBIS.Size = new Size(65, 27);
+            txtITBIS.Size = new Size(156, 55);
             txtITBIS.TabIndex = 46;
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(193, 183);
-            txtPrecio.Margin = new Padding(2);
+            txtPrecio.Location = new Point(482, 439);
+            txtPrecio.Margin = new Padding(5);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(81, 27);
+            txtPrecio.Size = new Size(196, 55);
             txtPrecio.TabIndex = 45;
             // 
             // cmbPais
             // 
             cmbPais.FormattingEnabled = true;
-            cmbPais.Location = new Point(416, 180);
-            cmbPais.Margin = new Padding(2);
+            cmbPais.Location = new Point(1040, 432);
+            cmbPais.Margin = new Padding(5);
             cmbPais.Name = "cmbPais";
-            cmbPais.Size = new Size(159, 28);
+            cmbPais.Size = new Size(392, 56);
             cmbPais.TabIndex = 44;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = SystemColors.AppWorkspace;
+            btnLimpiar.Location = new Point(702, 800);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(225, 69);
+            btnLimpiar.TabIndex = 62;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // FormActualizar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dtpFecha);
+            ClientSize = new Size(2000, 1080);
+            Controls.Add(btnLimpiar);
             Controls.Add(btnBuscar);
             Controls.Add(btnActualizar);
             Controls.Add(lblFecha);
@@ -259,6 +264,7 @@
             Controls.Add(txtITBIS);
             Controls.Add(txtPrecio);
             Controls.Add(cmbPais);
+            Margin = new Padding(8, 7, 8, 7);
             Name = "FormActualizar";
             Text = "FormActualizar";
             ResumeLayout(false);
@@ -266,8 +272,6 @@
         }
 
         #endregion
-
-        private DateTimePicker dtpFecha;
         private Button btnBuscar;
         private Button btnActualizar;
         private Label lblFecha;
@@ -286,5 +290,6 @@
         private TextBox txtITBIS;
         private TextBox txtPrecio;
         private ComboBox cmbPais;
+        private Button btnLimpiar;
     }
 }
