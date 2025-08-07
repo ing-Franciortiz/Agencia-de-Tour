@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Agencia_de_tour
 {
     public partial class FormMostrar : Form
     {
-
         public FormMostrar()
         {
             InitializeComponent();
+
             dataGridView1.Columns.Clear();
             dataGridView1.Columns.Add("ID", "ID");
             dataGridView1.Columns.Add("Nombre", "Nombre del Tour");
@@ -28,12 +22,11 @@ namespace Agencia_de_tour
             dataGridView1.Columns.Add("Estado", "Estado");
             dataGridView1.Columns.Add("Fecha", "Fecha");
 
-            // 🔄 Ajuste automático de columnas
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             CargarTours();
-
         }
+
         public void CargarTours()
         {
             dataGridView1.Rows.Clear();
@@ -46,50 +39,29 @@ namespace Agencia_de_tour
                 if (string.IsNullOrWhiteSpace(linea)) continue;
 
                 var partes = linea.Split(';');
-
                 if (partes.Length >= dataGridView1.Columns.Count)
                 {
                     dataGridView1.Rows.Add(partes);
                 }
-                else
-                {
-                    MessageBox.Show($"La línea tiene {partes.Length} campos, pero se esperaban {dataGridView1.Columns.Count}:\n{linea}");
-
-                }
             }
+        }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FormAgregar formAgregar = new FormAgregar(this); // ✅ Pasa la referencia actual
+            formAgregar.Show();
         }
 
 
 
-
-        private void btnAbrirActualizar_Click(object sender, EventArgs e)
+        private void btnAbrirActualizar_Click_1(object sender, EventArgs e)
         {
-
-
-
-
-            string tourId = txtIDActualizar.Text.Trim();
-
-            if (string.IsNullOrEmpty(tourId))
-            {
-                MessageBox.Show("Por favor, ingresa el ID del tour para actualizar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            FormActualizar frmActualizar = new FormActualizar();
-            frmActualizar.TourIDToUpdate = tourId;
-            frmActualizar.ShowDialog();
-
-
-        }
-
-        private void txtIDActualizar_TextChanged(object sender, EventArgs e)
-        {
-
+            FormActualizar formActualizar = new FormActualizar();
+            formActualizar.MdiParent = this.MdiParent; // Esto lo encaja dentro del formulario principal
+            formActualizar.Show();
         }
     }
 }
- 
+
 
 

@@ -80,7 +80,7 @@ namespace Agencia_de_tour
             cmbDuracion.Items.Clear();
             cmbDuracion.Items.AddRange(new string[]
             {
-            "1MES", "2MES", "3MES", "4MES", "5MES", "6MES", "7MES", "10MES", "14MES", "20MES"
+            "1MESS", "2MESES", "3MESES", "4MESES", "5MESES", "6MESES", "7MESES", "8MESES", "9MESES", "10MESES", "11MESES", "12MESES"
             });
 
 
@@ -92,9 +92,6 @@ namespace Agencia_de_tour
         }
         private void GenerarNombreTour()
         {
-
-
-
 
             string pais = cmbPais.SelectedItem?.ToString() ?? "";
             string duracion = cmbDuracion.Text.Trim();
@@ -108,7 +105,6 @@ namespace Agencia_de_tour
 
             string destinosTexto = string.Join(", ", destinos);
             txtNombreTour.Text = $"{pais} - {duracion} - {destinosTexto}";
-
 
         }
 
@@ -152,7 +148,7 @@ namespace Agencia_de_tour
                 clbDestino.Items.AddRange(destinosPorPais[paisSeleccionado].ToArray());
             }
 
-            ActualizarPrecio(0);
+            ActualizarPrecioYITBIS();
             GenerarNombreTour();
 
         }
@@ -196,6 +192,8 @@ namespace Agencia_de_tour
                 precioBase *= 1.70m;
             else if (cantidadCiudades >= 3)
                 precioBase *= 2.00m;
+            else
+                precioBase = 0; // Si no hay destinos, no hay precio
 
             // Ajuste por duración del viaje
             decimal multiplicador = 1.0m;
@@ -219,9 +217,37 @@ namespace Agencia_de_tour
             decimal itbis = precioFinal * 0.18m;
             txtITBIS.Text = itbis.ToString("0.00");
 
-
-
         }
+
+        private void ActualizarPrecioYITBIS()
+        {
+            if (cmbPais.SelectedItem == null || cmbDuracion.SelectedItem == null)
+                return;
+
+            string pais = cmbPais.SelectedItem.ToString();
+            string duracion = cmbDuracion.SelectedItem.ToString();
+
+            decimal precioBase = 0;
+
+            if (preciosBasePorPais.TryGetValue(pais, out precioBase))
+            {
+                int meses = 1;
+
+                // Extraer los dígitos del inicio de la cadena de duración
+                string numeroMeses = new string(duracion.TakeWhile(char.IsDigit).ToArray());
+                int.TryParse(numeroMeses, out meses);
+
+                decimal precioTotal = precioBase * meses;
+                decimal itbis = precioTotal * 0.18m;
+
+                txtPrecio.Text = precioTotal.ToString("0.00");
+                txtITBIS.Text = itbis.ToString("0.00");
+            }
+        }
+
+
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -290,7 +316,7 @@ namespace Agencia_de_tour
             string ruta = "tours_nuevos.csv";
 
 
-            string nuevaLinea = $"{idNuevo};{nombreTour};{pais};{destinosSeleccionados};{duracion};{precio:0.00};{itbis:0.00};{estado};{fecha}";
+            string nuevaLinea = $"{idNuevo};{nombreTour};{pais};{destinosSeleccionados};{duracion};{precio:0.00};{itbis:0.00};{estado};{DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")}";
             File.AppendAllText("tours_nuevo.csv", nuevaLinea + Environment.NewLine);
             FormMostrar frmMostrar = new FormMostrar();
             frmMostrar.CargarTours();
@@ -335,9 +361,9 @@ namespace Agencia_de_tour
 
         private void cmbDuracion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActualizarPrecio(0);
-            GenerarNombreTour();
 
+            GenerarNombreTour();
+            ActualizarPrecioYITBIS();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -376,18 +402,6 @@ namespace Agencia_de_tour
 
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreTour_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
 
         {
@@ -398,19 +412,11 @@ namespace Agencia_de_tour
             }
         }
 
-        private void lblDestino_Click(object sender, EventArgs e)
+        private void lblEstado_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+

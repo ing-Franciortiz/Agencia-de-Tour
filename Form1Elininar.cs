@@ -73,7 +73,7 @@ namespace Agencia_de_tour
                     lineas.Remove(tourEncontrado);
                     File.WriteAllLines(archivo, lineas);
                     lblResultado.Text = "✅ Tour eliminado correctamente.";
-                     LimpiarCamposUsuario(this);
+                    LimpiarCamposUsuario(this);
 
 
                 }
@@ -95,6 +95,7 @@ namespace Agencia_de_tour
 
     }
 }
+
 
 
 

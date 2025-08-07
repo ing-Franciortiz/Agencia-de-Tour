@@ -36,19 +36,17 @@
             // 
             // txtID
             // 
-            txtID.Location = new Point(200, 11);
-            txtID.Margin = new Padding(3, 2, 3, 2);
+            txtID.Location = new Point(249, 17);
             txtID.Name = "txtID";
-            txtID.Size = new Size(110, 23);
+            txtID.Size = new Size(125, 27);
             txtID.TabIndex = 0;
             // 
             // btnIDEliminar
             // 
             btnIDEliminar.BackColor = Color.Red;
-            btnIDEliminar.Location = new Point(78, 42);
-            btnIDEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnIDEliminar.Location = new Point(89, 56);
             btnIDEliminar.Name = "btnIDEliminar";
-            btnIDEliminar.Size = new Size(98, 28);
+            btnIDEliminar.Size = new Size(112, 37);
             btnIDEliminar.TabIndex = 1;
             btnIDEliminar.Text = "Eliminar Tour";
             btnIDEliminar.UseVisualStyleBackColor = false;
@@ -58,9 +56,9 @@
             // 
             lblIDEliminar.AutoSize = true;
             lblIDEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblIDEliminar.Location = new Point(12, 15);
+            lblIDEliminar.Location = new Point(14, 20);
             lblIDEliminar.Name = "lblIDEliminar";
-            lblIDEliminar.Size = new Size(182, 15);
+            lblIDEliminar.Size = new Size(229, 20);
             lblIDEliminar.TabIndex = 2;
             lblIDEliminar.Text = "Ingrese el ID del tour a eliminar";
             // 
@@ -68,23 +66,21 @@
             // 
             lblResultado.AutoSize = true;
             lblResultado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResultado.Location = new Point(200, 47);
+            lblResultado.Location = new Point(229, 63);
             lblResultado.Margin = new Padding(1, 0, 1, 0);
             lblResultado.Name = "lblResultado";
-            lblResultado.Size = new Size(45, 17);
+            lblResultado.Size = new Size(0, 23);
             lblResultado.TabIndex = 3;
-            lblResultado.Text = "label1";
             // 
             // Form1Elininar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(449, 244);
+            ClientSize = new Size(387, 157);
             Controls.Add(lblResultado);
             Controls.Add(lblIDEliminar);
             Controls.Add(btnIDEliminar);
             Controls.Add(txtID);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1Elininar";
             Text = "Form1Elininar";
             ResumeLayout(false);
