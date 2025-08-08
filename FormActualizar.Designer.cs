@@ -104,7 +104,7 @@
             // 
             lblEstado.AutoSize = true;
             lblEstado.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEstado.Location = new Point(234, 236);
+            lblEstado.Location = new Point(234, 235);
             lblEstado.Margin = new Padding(2, 0, 2, 0);
             lblEstado.Name = "lblEstado";
             lblEstado.Size = new Size(66, 30);
