@@ -20,7 +20,7 @@ namespace Agencia_de_tour
 { "Estados Unidos", 3000m },
 { "Brasil", 2300m }
 };
-       
+
         private FormMostrar formMostrar;
 
         public FormAgregar(FormMostrar formMostrar)
@@ -354,9 +354,10 @@ namespace Agencia_de_tour
             ActualizarPrecioYITBIS();
         }
 
-     
-       
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

@@ -28,27 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1Elininar));
             txtID = new TextBox();
             btnIDEliminar = new Button();
             lblIDEliminar = new Label();
             lblResultado = new Label();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtID
             // 
-            txtID.Location = new Point(601, 234);
-            txtID.Margin = new Padding(8, 7, 8, 7);
+            txtID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtID.Location = new Point(375, 178);
             txtID.Name = "txtID";
-            txtID.Size = new Size(306, 55);
+            txtID.Size = new Size(125, 34);
             txtID.TabIndex = 0;
             // 
             // btnIDEliminar
             // 
             btnIDEliminar.BackColor = Color.Red;
-            btnIDEliminar.Location = new Point(164, 315);
-            btnIDEliminar.Margin = new Padding(8, 7, 8, 7);
+            btnIDEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnIDEliminar.Location = new Point(520, 177);
             btnIDEliminar.Name = "btnIDEliminar";
-            btnIDEliminar.Size = new Size(280, 89);
+            btnIDEliminar.Size = new Size(146, 37);
             btnIDEliminar.TabIndex = 1;
             btnIDEliminar.Text = "Eliminar Tour";
             btnIDEliminar.UseVisualStyleBackColor = false;
@@ -57,11 +61,10 @@
             // lblIDEliminar
             // 
             lblIDEliminar.AutoSize = true;
-            lblIDEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblIDEliminar.Location = new Point(1, 234);
-            lblIDEliminar.Margin = new Padding(8, 0, 8, 0);
+            lblIDEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIDEliminar.Location = new Point(363, 135);
             lblIDEliminar.Name = "lblIDEliminar";
-            lblIDEliminar.Size = new Size(549, 48);
+            lblIDEliminar.Size = new Size(313, 28);
             lblIDEliminar.TabIndex = 2;
             lblIDEliminar.Text = "Ingrese el ID del tour a eliminar";
             // 
@@ -69,24 +72,52 @@
             // 
             lblResultado.AutoSize = true;
             lblResultado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResultado.Location = new Point(572, 151);
-            lblResultado.Margin = new Padding(2, 0, 2, 0);
+            lblResultado.Location = new Point(700, 187);
+            lblResultado.Margin = new Padding(1, 0, 1, 0);
             lblResultado.Name = "lblResultado";
-            lblResultado.Size = new Size(0, 52);
+            lblResultado.Size = new Size(0, 23);
             lblResultado.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(341, 33);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(45, 52);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 29;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Times New Roman", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Tan;
+            label1.Location = new Point(-2, 18);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(356, 67);
+            label1.TabIndex = 28;
+            label1.Text = "Tour del Mar";
             // 
             // Form1Elininar
             // 
-            AutoScaleDimensions = new SizeF(20F, 48F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1430, 536);
+            BackColor = Color.Azure;
+            ClientSize = new Size(1201, 500);
+            Controls.Add(pictureBox1);
+            Controls.Add(label1);
             Controls.Add(lblResultado);
             Controls.Add(lblIDEliminar);
             Controls.Add(btnIDEliminar);
             Controls.Add(txtID);
-            Margin = new Padding(8, 7, 8, 7);
             Name = "Form1Elininar";
             Text = "Form1Elininar";
+            Load += Form1Elininar_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,5 +128,7 @@
         private Button btnIDEliminar;
         private Label lblIDEliminar;
         private Label lblResultado;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }

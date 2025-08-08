@@ -92,7 +92,10 @@ namespace Agencia_de_tour
             frmMostrar.CargarTours();
         }
 
+        private void Form1Elininar_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

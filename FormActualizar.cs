@@ -259,7 +259,7 @@ namespace Agencia_de_tour
         }
 
 
-        private void btnBuscar_Click_1(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             string idBuscado = txtID.Text.Trim();
             if (string.IsNullOrWhiteSpace(idBuscado))
@@ -349,10 +349,11 @@ namespace Agencia_de_tour
             lblEstado.Text = "Automatico";
         }
 
-        
     }
-
+  
 }
+
+
 
 
 

@@ -59,5 +59,15 @@ namespace Agencia_de_tour.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_7_ago_2025__15_38_19 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 7 ago 2025, 15_38_19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
