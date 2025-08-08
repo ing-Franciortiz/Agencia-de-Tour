@@ -55,7 +55,7 @@
             // btnActualizar
             // 
             btnActualizar.BackColor = Color.Silver;
-            btnActualizar.Location = new Point(231, 630);
+            btnActualizar.Location = new Point(410, 513);
             btnActualizar.Margin = new Padding(2);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(211, 94);
@@ -67,7 +67,7 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.LimeGreen;
-            btnLimpiar.Location = new Point(496, 630);
+            btnLimpiar.Location = new Point(675, 513);
             btnLimpiar.Margin = new Padding(1);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(213, 94);
@@ -104,7 +104,7 @@
             // 
             lblEstado.AutoSize = true;
             lblEstado.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEstado.Location = new Point(427, 205);
+            lblEstado.Location = new Point(234, 236);
             lblEstado.Margin = new Padding(2, 0, 2, 0);
             lblEstado.Name = "lblEstado";
             lblEstado.Size = new Size(66, 30);
@@ -115,7 +115,7 @@
             // 
             cmbDuracion.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDuracion.FormattingEnabled = true;
-            cmbDuracion.Location = new Point(301, 412);
+            cmbDuracion.Location = new Point(301, 420);
             cmbDuracion.Margin = new Padding(2);
             cmbDuracion.Name = "cmbDuracion";
             cmbDuracion.Size = new Size(237, 28);
@@ -158,7 +158,7 @@
             // 
             lBLDuraccion.AutoSize = true;
             lBLDuraccion.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lBLDuraccion.Location = new Point(197, 413);
+            lBLDuraccion.Location = new Point(197, 421);
             lBLDuraccion.Margin = new Padding(2, 0, 2, 0);
             lBLDuraccion.Name = "lBLDuraccion";
             lBLDuraccion.Size = new Size(85, 30);
@@ -169,7 +169,7 @@
             // 
             lBLITBIS.AutoSize = true;
             lBLITBIS.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lBLITBIS.Location = new Point(231, 340);
+            lBLITBIS.Location = new Point(231, 348);
             lBLITBIS.Margin = new Padding(2, 0, 2, 0);
             lBLITBIS.Name = "lBLITBIS";
             lBLITBIS.Size = new Size(54, 30);
@@ -180,7 +180,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Myanmar Text", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(234, 272);
+            lblPrecio.Location = new Point(234, 280);
             lblPrecio.Margin = new Padding(2, 0, 2, 0);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(62, 30);
@@ -204,7 +204,7 @@
             clbDestino.Location = new Point(816, 272);
             clbDestino.Margin = new Padding(2);
             clbDestino.Name = "clbDestino";
-            clbDestino.Size = new Size(377, 400);
+            clbDestino.Size = new Size(289, 158);
             clbDestino.TabIndex = 68;
             // 
             // txtID
@@ -227,7 +227,7 @@
             // 
             // txtITBIS
             // 
-            txtITBIS.Location = new Point(301, 340);
+            txtITBIS.Location = new Point(301, 348);
             txtITBIS.Margin = new Padding(2);
             txtITBIS.Name = "txtITBIS";
             txtITBIS.Size = new Size(141, 27);
@@ -235,7 +235,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(301, 268);
+            txtPrecio.Location = new Point(301, 276);
             txtPrecio.Margin = new Padding(2);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(124, 27);
@@ -253,12 +253,13 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(532, 68);
+            btnBuscar.BackColor = Color.LightGray;
+            btnBuscar.Location = new Point(410, 197);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(94, 29);
             btnBuscar.TabIndex = 80;
-            btnBuscar.Text = "button1";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // FormActualizar

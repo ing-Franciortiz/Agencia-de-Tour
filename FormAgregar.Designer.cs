@@ -56,7 +56,7 @@
             // btnGuardar
             // 
             btnGuardar.BackColor = SystemColors.ActiveBorder;
-            btnGuardar.Location = new Point(317, 750);
+            btnGuardar.Location = new Point(308, 552);
             btnGuardar.Margin = new Padding(2);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(268, 96);
@@ -68,7 +68,7 @@
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.LimeGreen;
-            btnLimpiar.Location = new Point(643, 750);
+            btnLimpiar.Location = new Point(634, 552);
             btnLimpiar.Margin = new Padding(2);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(289, 96);
@@ -80,7 +80,7 @@
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.Red;
-            btnCancelar.Location = new Point(999, 750);
+            btnCancelar.Location = new Point(990, 552);
             btnCancelar.Margin = new Padding(2);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(263, 96);
@@ -144,7 +144,7 @@
             clbDestino.Location = new Point(836, 250);
             clbDestino.Margin = new Padding(2);
             clbDestino.Name = "clbDestino";
-            clbDestino.Size = new Size(377, 410);
+            clbDestino.Size = new Size(322, 149);
             clbDestino.TabIndex = 12;
             // 
             // lbl
